@@ -32,9 +32,10 @@ namespace Work
             #endregion
             
             WriteLine($"Начальные условия:\nу1(а) = {y1}; у2(а) = {y2};\nа = {a}; b = {b}; h = {h}\nРезультат:");
-            WriteLine($"   y1  |   y2   |    x\n------------------------- ");
+            WriteLine($" i  |   y1   |   y2   |    x\n------------------------------ ");
             
             var step = (b - a) / n;
+            var i = 0;
             
             for (double x = a; x < b; x += step)
             {
@@ -49,10 +50,11 @@ namespace Work
                 var r1 = 1.0 / 12.0 * Pow(h, 3) * new DY(y1, y2, x).Y1_3;
                 var r2 = 1.0 / 12.0 * Pow(h, 3) * new DY(y1, y2, x).Y2_3;
                 
-                if (Max(Abs(r1), Abs(r2)) > h)
+                if (Max(Abs(r1), Abs(r2)) >= h)
                     step -= h;
-                
-                WriteLine($"{y1:0.0000} | {y2:0.0000} | {x:0.0000}");
+
+                i++;
+                WriteLine($"[{i}] | {y1:0.0000} | {y2:0.0000} | {x:0.0000}");
             }
         }
     }

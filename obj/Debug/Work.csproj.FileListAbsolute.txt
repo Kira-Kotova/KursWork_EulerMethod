@@ -1,0 +1,6 @@
+D:\Kot\Progects\KursWork_EulerMethod\bin\Debug\Work.exe
+D:\Kot\Progects\KursWork_EulerMethod\bin\Debug\Work.pdb
+D:\Kot\Progects\KursWork_EulerMethod\obj\Debug\Work.csprojAssemblyReference.cache
+D:\Kot\Progects\KursWork_EulerMethod\obj\Debug\Work.csproj.CoreCompileInputs.cache
+D:\Kot\Progects\KursWork_EulerMethod\obj\Debug\Work.exe
+D:\Kot\Progects\KursWork_EulerMethod\obj\Debug\Work.pdb
