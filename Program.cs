@@ -1,4 +1,5 @@
-﻿using static System.Console;
+﻿using System.IO;
+using static System.Console;
 using static System.Math;
 using static Work.Constant;
 
@@ -82,10 +83,10 @@ namespace Work
     
     class Param
     {   
-        static double calculateK1(double y1, double y2, double x) => y1 * x + y2 * Pow(x,2);
-        static double calculateG1(double y1, double y2, double x) => y2 * x - y1 * Pow(x,2);
-        static double calculateK2(double y1, double y2, double x, double k1, double g1) => (y1 + k1) * x + (y2 + g1) * Pow(x,2);
-        static double calculateG2(double y1, double y2, double x, double k1, double g1) => (y2 + g1) * x - (y1 + k1) * Pow(x,2);
+        double calculateK1(double y1, double y2, double x) => y1 * x + y2 * Pow(x,2);
+        double calculateG1(double y1, double y2, double x) => y2 * x - y1 * Pow(x,2);
+        double calculateK2(double y1, double y2, double x) => (y1 + k1) * x + (y2 + g1) * Pow(x,2);
+        double calculateG2(double y1, double y2, double x) => (y2 + g1) * x - (y1 + k1) * Pow(x,2);
 
         private double k1;
         private double g1;
@@ -101,9 +102,9 @@ namespace Work
         {
             k1 = calculateK1(y1, y2, x);
             g1 = calculateG1(y1, y2, x);
-            k2 = calculateK2(y1, y2, x + h, k1, g1);
-            g2 = calculateG2(y1, y2, x + h, k1, g1);
+            k2 = calculateK2(y1, y2, x + h);
+            g2 = calculateG2(y1, y2, x + h);
         }
-    }
+    }  
 }
 
